@@ -21,14 +21,14 @@ function addCollection() {
 }
 
 function createBoxes(amount) {
-	let increaseBy = 30;
+	let widthAndHeight = 30;
 	for (let i = 1; i <= amount; i += 1) {
 		const createdDiv = document.createElement("div");
 		createdDiv.style.backgroundColor = getRandomHexColor();
-		createdDiv.style.width = `${increaseBy}px`;
-		createdDiv.style.height = `${increaseBy}px`;
+		createdDiv.style.width = `${widthAndHeight}px`;
+		createdDiv.style.height = `${widthAndHeight}px`;
 		createdDiv.classList.add("created-element");
-		increaseBy += 10;
+		widthAndHeight += 10;
 		parentBox.append(createdDiv);
 	}
 }
