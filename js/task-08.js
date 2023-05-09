@@ -5,16 +5,18 @@ function onFormSubmit(event) {
 	event.preventDefault();
 
 	const formElements = event.currentTarget.elements;
-	const userInputMail = formElements.email.value;
-	const userInputPsw = formElements.password.value;
-	if (userInputMail.length < 1) {
-		alert("Введіть емейл");
-	} else if (userInputPsw.length < 1) {
-		alert("Введіть пароль");
+	const email = formElements.email.value;
+	const password = formElements.password.value;
+	if (email.length < 1) {
+		
+		return alert("Введіть емейл");
+	} else if (password.length < 1) {
+		return alert("Введіть пароль");
+		
 	} else {
 		const userData = {
-			userInputMail,
-			userInputPsw,
+			email,
+			password,
 		};
 		console.log(userData);
 	}

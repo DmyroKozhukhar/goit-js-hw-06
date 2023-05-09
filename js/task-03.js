@@ -14,17 +14,9 @@ const images = [
 ];
 const galleryList = document.querySelector(".gallery");
 
-function addImageToList(listInWhichWePut, imagesToAdd) {
-	const listEl = imagesToAdd.map(({ url, alt }) => {
-		const listItem = document.createElement("li");
-		const image = document.createElement("img");
-		image.src = url;
-		image.alt = alt;
-		image.classList.add("new-picture");
-		listItem.insertAdjacentElement("beforeend", image);
-		return listItem;
-	});
-
-	return listInWhichWePut.append(...listEl);
-}
-addImageToList(galleryList, images);
+const imagesToAdd = images
+	.map((img) => {
+		return `<li><img src="${img.url}" alt="${img.alt}"></li>`;
+	})
+	.join("");
+galleryList.insertAdjacentHTML("beforeend", imagesToAdd);
